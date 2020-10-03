@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://github.com/juliacodes/tuts.juliacodes/blob/master/branding/logo.png?raw=true" width="120" />
+  <a href="https://juliacodes.com">
+    <img alt="juliacodes tutorials" src="https://github.com/juliacodes/tuts.juliacodes/blob/master/branding/logo.png?raw=true" width="120" />
   </a>
 </p>
 <br/>
