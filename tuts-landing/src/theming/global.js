@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;500;700&display=swap');
     * {
     border: 0;
     box-sizing: inherit;
@@ -31,6 +31,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    background-color: ${({ theme }) => theme.main};
+    color: ${({ theme }) => theme.textMain};
     box-sizing: border-box;
     width: 100%;
     height: 100%;

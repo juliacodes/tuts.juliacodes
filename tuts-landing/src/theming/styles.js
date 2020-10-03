@@ -34,5 +34,36 @@ export const LogoCont = styled.div`
 
   .comingSoon {
     margin-top: 20px;
+    font-size: 10px;
+    line-height: 100%;
+    padding: 8px 5px 5px 5px;
+    border-radius: 4px;
+    letter-spacing: 0.045em;
+    background-color: ${({ theme }) => theme.gray};
+    color: ${({ theme }) => theme.grayText};
+  }
+`
+
+export const Main = styled.div`
+  width: 500px;
+  margin: 100px auto;
+  h1 {
+    color: ${({ theme }) => theme.textMain};
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 112.69%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  p {
+    color: ${({ theme }) => theme.textMain};
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 165.69%;
+    /* identical to box height, or 30px */
+
+    text-align: center;
+    margin: 40px 0 20px 0px;
   }
 `
