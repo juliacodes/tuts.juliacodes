@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Spartan:wght@400;700&display=swap');
     * {
     border: 0;
     box-sizing: inherit;
@@ -39,6 +39,10 @@ const GlobalStyles = createGlobalStyle`
     overscroll-behavior-y: none;
     -webkit-overflow-scrolling: touch;
     font-family: 'Spartan', sans-serif;
+  }
+
+  p{
+    font-family: 'IBM Plex Sans', sans-serif;
   }
 
   a {
