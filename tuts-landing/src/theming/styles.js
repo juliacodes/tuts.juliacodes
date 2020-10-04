@@ -9,17 +9,21 @@ const QUERIES = {
   height: `min-height: 800px`,
 }
 export const Container = styled.div`
-  width: 100%;
-  min-height: calc(100vh - 90px);
+  width: 100vw;
+  max-height: calc(100vh);
+  padding: 0;
+  overflow: hidden;
+
+  @media (${QUERIES.small}) {
+    max-height: calc(100vh - 30px);
+    height: 100vh;
+  }
+`
+export const Inner = styled.div`
+  max-height: calc(100vh - 30px);
+  height: 100vh;
   padding: 0;
   margin: 50px auto 0 auto;
-  max-width: 1500px;
-
-  @media (${QUERIES.large}) {
-    margin: 30px auto 0px auto;
-    min-height: calc(100vh - 90px);
-    padding: 0px;
-  }
 `
 
 export const LogoCont = styled.div`
@@ -33,6 +37,7 @@ export const LogoCont = styled.div`
   img {
     width: 20px;
     height: auto;
+
     @media (${QUERIES.small}) {
       width: 30px;
     }
@@ -186,13 +191,19 @@ export const slideRev = keyframes`
 export const TextAnimate = styled.div`
   position: absolute;
   width: 100vw;
-  bottom: -80px;
+  bottom: -10px;
   left: 0;
   overflow: hidden;
   white-space: nowrap;
-  display: none;
-  @media (${QUERIES.height}) {
+  display: block;
+
+  @media (${QUERIES.small}) {
+    display: none;
+    bottom: -30px;
+  }
+  @media (${QUERIES.height}) and (${QUERIES.small}) {
     display: block;
+    bottom: -30px;
   }
 
   #row2 {
@@ -202,16 +213,25 @@ export const TextAnimate = styled.div`
 
 export const InnerText = styled.div`
   animation: ${slide} linear infinite 20s;
-  margin: 30px;
+  margin: 20px;
+
+  @media (${QUERIES.small}) {
+    margin: 30px;
+  }
   p {
     color: ${({ theme }) => theme.superLightText};
     display: inline;
-    margin: 30px;
+    margin: 20px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 13px;
     line-height: 100%;
     font-family: "Spartan", sans-serif;
     text-transform: lowercase;
+
+    @media (${QUERIES.small}) {
+      font-size: 18px;
+      margin: 30px;
+    }
   }
 
   .heavy {
