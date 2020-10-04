@@ -180,7 +180,7 @@ export const slide = keyframes`
 
 export const slideRev = keyframes`
   from {
-    transform: translateX(-100%);
+    transform: translateX(-80%);
   }
 
   to {
@@ -195,7 +195,7 @@ export const TextAnimate = styled.div`
   left: 0;
   overflow: hidden;
   white-space: nowrap;
-  display: block;
+  display: none;
 
   @media (${QUERIES.small}) {
     display: none;
@@ -204,6 +204,10 @@ export const TextAnimate = styled.div`
   @media (${QUERIES.height}) and (${QUERIES.small}) {
     display: block;
     bottom: -30px;
+  }
+
+  @media (${QUERIES.height}) {
+    display: block;
   }
 
   #row2 {

@@ -15,7 +15,10 @@ import {
 } from "../theming/styles"
 
 const App = () => {
-  const [theme, setTheme] = useState("dark")
+  const mq = window.matchMedia("(prefers-color-scheme: dark)")
+  const mode = `${mq.matches ? "dark" : "light"}`
+  const [theme, setTheme] = useState(mode)
+  console.log(mode)
 
   function toggleTheme() {
     if (theme === "light") {
@@ -82,40 +85,40 @@ const App = () => {
             <p>advanced styling</p>
           </InnerText>
           <InnerText id="row2">
-            <p>coding environment</p>
-            <p>github setup</p>
-            <p className="heavy">structuring projects</p>
-            <p>dom manipulation</p>
-            <p>javascript events</p>
-            <p>styled-components</p>
-            <p className="heavy">react hooks</p>
+            <p className="heavy">building forms</p>
+            <p>domains</p>
+            <p>HTML semantics</p>
+            <p>classes & IDs</p>
+            <p>accessibility</p>
+            <p>design</p>
             <p>advanced styling</p>
-            <p>coding environment</p>
-            <p className="heavy">github setup</p>
-            <p>structuring projects</p>
-            <p>dom manipulation</p>
-            <p>javascript events</p>
-            <p>styled-components</p>
-            <p>react hooks</p>
-            <p>advanced styling</p>
+            <p>Sass</p>
+            <p>seo</p>
+            <p>positioning</p>
+            <p className="heavy">building tables</p>
+            <p>CSS grid</p>
+            <p>flex box</p>
+            <p>media queries</p>
+            <p className="heavy">site speed</p>
+            <p>color theory</p>
           </InnerText>
           <InnerText>
-            <p>coding environment</p>
-            <p>github setup</p>
-            <p className="heavy">structuring projects</p>
-            <p>dom manipulation</p>
-            <p>javascript events</p>
-            <p>styled-components</p>
-            <p className="heavy">react hooks</p>
-            <p>advanced styling</p>
-            <p>coding environment</p>
-            <p className="heavy">github setup</p>
-            <p>structuring projects</p>
-            <p>dom manipulation</p>
-            <p>javascript events</p>
-            <p>styled-components</p>
+            <p>string methods</p>
+            <p className="heavy">es6+</p>
+            <p>arrow functions</p>
+            <p>debugging</p>
+            <p className="heavy">portfolio tips</p>
+            <p>custom domains</p>
+            <p>functions</p>
+            <p>API calls</p>
+            <p className="heavy">graphql</p>
             <p>react hooks</p>
             <p>advanced styling</p>
+            <p>git basics</p>
+            <p className="heavy">rebasing & merging</p>
+            <p>repo hosting</p>
+            <p>cypress testing</p>
+            <p>jest testing</p>
           </InnerText>
         </TextAnimate>
       </Container>
