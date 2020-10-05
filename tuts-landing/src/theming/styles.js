@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import send from "../images/send.svg"
+import error from "../images/error.svg"
 
 const QUERIES = {
   large: `min-width: 1200px`,
@@ -92,6 +93,50 @@ export const Main = styled.div`
   }
 `
 
+export const Sending = keyframes`
+  from {
+    transform-origin: 50% 50%;
+    transform:  rotate(45deg) translateX(0px);
+
+  }
+
+  to {
+    transform-origin: initial;
+    transform: scale(2) translateX(100vw);
+  }
+`
+
+export const Shake = keyframes`
+  0% {
+    transform: translateX(0px);
+  }
+
+  16.6% {
+    transform: translateX(3px);
+  }
+ 
+  33.3% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+
+  66.6%{
+    transform: translateX(0px);
+
+  }
+  83.3%{
+    transform: translateX(3px);
+  }
+
+  100%{
+    transform: translateX(0px);
+
+  }
+
+`
+
 export const FormCont = styled.div`
   width: calc(100vw - 70px);
   max-width: 400px;
@@ -109,7 +154,6 @@ export const FormCont = styled.div`
     content: "";
     width: calc(100vw - 140px);
     max-width: 300px;
-
     height: 50px;
     position: absolute;
     top: 40px;
@@ -118,15 +162,42 @@ export const FormCont = styled.div`
 
     @media (${QUERIES.small}) {
       width: 350px;
-      left: 25px;
+      left: 35px;
     }
   }
 
-  form {
+  .form-error {
+    border: 1px solid #e4453a;
+  }
+
+  .error-anim {
+    animation: ${Shake} linear 0.2s;
+  }
+
+  .error-icon::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 33px;
+    right: 135px;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(${error});
+
+    z-index: 99;
+
+    @media (${QUERIES.small}) {
+      right: 70px;
+    }
+  }
+
+  #form {
     width: calc(100vw - 70px);
     max-width: 400px;
-
-    height: 70px;
     padding: 20px 0;
     background-color: ${({ theme }) => theme.main};
     display: flex;
@@ -137,6 +208,12 @@ export const FormCont = styled.div`
 
     @media (${QUERIES.small}) {
       width: 400px;
+    }
+
+    .sent {
+      animation: ${Sending} ease-in-out 3s;
+      position: relative;
+      display: inline-block;
     }
   }
 
@@ -166,6 +243,11 @@ export const FormCont = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url(${send});
+    transition-duration: 0.4s;
+    :hover {
+      transform-origin: 50% 50%;
+      transform: rotate(45deg);
+    }
   }
 `
 export const slide = keyframes`

@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import logo from "../images/logo.png"
 import logoDark from "../images/logo-dark.png"
 import { ThemeProvider } from "styled-components"
 import lightTheme, { darkTheme } from "../theming/themeContext"
 import GlobalStyles from "../theming/global"
+import Form from "../components/Form"
 import {
-  FormCont,
   Inner,
   Container,
   LogoCont,
@@ -15,10 +15,13 @@ import {
 } from "../theming/styles"
 
 const App = () => {
-  const mq = window.matchMedia("(prefers-color-scheme: dark)")
-  const mode = `${mq.matches ? "dark" : "light"}`
-  const [theme, setTheme] = useState(mode)
-  console.log(mode)
+  const [theme, setTheme] = useState("dark")
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)")
+    const mode = `${mq.matches ? "dark" : "light"}`
+    setTheme(mode)
+    console.log(mode)
+  }, [])
 
   function toggleTheme() {
     if (theme === "light") {
@@ -47,22 +50,7 @@ const App = () => {
               view and explanation
             </p>
             <p>Subscribe to be the first to see new content.</p>
-            <FormCont>
-              <form>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder="Your Email Address"
-                />
-                <button
-                  id="submit"
-                  type="submit"
-                  form="form1"
-                  value="Submit"
-                ></button>
-              </form>
-            </FormCont>
+            <Form />
           </Main>
         </Inner>
         <TextAnimate>
