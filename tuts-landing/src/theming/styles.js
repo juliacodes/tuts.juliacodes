@@ -9,6 +9,7 @@ const QUERIES = {
   maxWidth: `1500px`,
   height: `min-height: 750px`,
 }
+
 export const Container = styled.div`
   width: 100vw;
   max-height: calc(100vh);
@@ -273,7 +274,8 @@ export const slideRev = keyframes`
 export const TextAnimate = styled.div`
   position: absolute;
   width: 100vw;
-  bottom: -10px;
+  height: 160px;
+  bottom: 30px;
   left: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -281,11 +283,11 @@ export const TextAnimate = styled.div`
 
   @media (${QUERIES.small}) {
     display: none;
-    bottom: -30px;
+    bottom: 0px;
   }
   @media (${QUERIES.height}) and (${QUERIES.small}) {
     display: block;
-    bottom: -30px;
+    bottom: 0px;
   }
 
   @media (${QUERIES.height}) {
@@ -297,13 +299,7 @@ export const TextAnimate = styled.div`
   }
 `
 
-export const InnerText = styled.div`
-  animation: ${slide} linear infinite 20s;
-  margin: 20px;
-
-  @media (${QUERIES.small}) {
-    margin: 30px;
-  }
+export const SlidingText = styled.div`
   p {
     color: ${({ theme }) => theme.superLightText};
     display: inline;
@@ -319,7 +315,6 @@ export const InnerText = styled.div`
       margin: 30px;
     }
   }
-
   .heavy {
     color: ${({ theme }) => theme.textMain};
   }

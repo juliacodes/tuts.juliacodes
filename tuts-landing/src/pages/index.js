@@ -4,7 +4,9 @@ import logoDark from "../images/logo-dark.png"
 import { ThemeProvider } from "styled-components"
 import lightTheme, { darkTheme } from "../theming/themeContext"
 import GlobalStyles from "../theming/global"
+import MarqueeCont from "../components/MarqueeCont"
 import Form from "../components/Form"
+
 import {
   Inner,
   Container,
@@ -42,62 +44,7 @@ const App = () => {
             <Form />
           </Main>
         </Inner>
-        <TextAnimate>
-          <InnerText>
-            <p>coding environment</p>
-            <p>github setup</p>
-            <p className="heavy">structuring projects</p>
-            <p>dom manipulation</p>
-            <p>javascript events</p>
-            <p>styled-components</p>
-            <p className="heavy">react hooks</p>
-            <p>advanced styling</p>
-            <p>coding environment</p>
-            <p className="heavy">github setup</p>
-            <p>structuring projects</p>
-            <p>dom manipulation</p>
-            <p>javascript events</p>
-            <p>styled-components</p>
-            <p>react hooks</p>
-            <p>advanced styling</p>
-          </InnerText>
-          <InnerText id="row2">
-            <p className="heavy">building forms</p>
-            <p>domains</p>
-            <p>HTML semantics</p>
-            <p>classes & IDs</p>
-            <p>accessibility</p>
-            <p>design</p>
-            <p>advanced styling</p>
-            <p>Sass</p>
-            <p>seo</p>
-            <p>positioning</p>
-            <p className="heavy">building tables</p>
-            <p>CSS grid</p>
-            <p>flex box</p>
-            <p>media queries</p>
-            <p className="heavy">site speed</p>
-            <p>color theory</p>
-          </InnerText>
-          <InnerText>
-            <p>string methods</p>
-            <p className="heavy">es6+</p>
-            <p>arrow functions</p>
-            <p>debugging</p>
-            <p className="heavy">portfolio tips</p>
-            <p>custom domains</p>
-            <p>functions</p>
-            <p>API calls</p>
-            <p className="heavy">graphql</p>
-            <p>react hooks</p>
-            <p>advanced styling</p>
-            <p>git basics</p>
-            <p className="heavy">rebasing & merging</p>
-            <p>repo hosting</p>
-            <p>cypress testing</p>
-            <p>jest testing</p>
-          </InnerText>
-        </TextAnimate>
+        <MarqueeCont />
       </Container>
     </ThemeProvider>
   )
