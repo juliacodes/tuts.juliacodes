@@ -61,7 +61,8 @@ test/**/public
 public/*
 !public/index.html
 !public/manifest.webmanifest
-!static/page-data
+!public/page-data/
+
 node_modules/
 .cache/
 .netlify
