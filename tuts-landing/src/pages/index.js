@@ -23,17 +23,6 @@ const App = () => {
     console.log(mode)
   }, [])
 
-  function toggleTheme() {
-    if (theme === "light") {
-      setTimeout(() => {
-        setTheme("dark")
-      }, 2000)
-    } else {
-      setTimeout(() => {
-        setTheme("light")
-      }, 2000)
-    }
-  }
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />

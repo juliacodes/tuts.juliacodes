@@ -10,17 +10,21 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   const submit = () => {
     setError(false)
-    email &&
-      !email.value.includes("@") &&
-      !email.value.includes(".") &&
-      setError(true) &&
-      setErrorAnim(true)
+    setTimeout(() => {
+      setErrorAnim(false)
+    }, 1000)
 
-    email &&
-      email.value.indexOf("@") > 0 &&
+    if (email && !email.value.includes("@") && !email.value.includes(".")) {
+      setError(true)
+      setErrorAnim(true)
+      console.log(error + " " + errorAnim)
+    }
+
+    if (email && email.value.indexOf("@") > 0) {
       onValidated({
         EMAIL: email.value,
       })
+    }
   }
   return (
     <>
@@ -34,12 +38,11 @@ const CustomForm = ({ status, message, onValidated }) => {
           <input
             className={
               status === "error"
-                ? ["form-error"(errorAnim ? " error-anim" : "")]
+                ? [errorAnim ? "error-anim" : "form-error"]
                 : error
-                ? ["form-error"(errorAnim ? " error-anim" : "")]
+                ? [errorAnim ? "error-anim form-error" : "form-error"]
                 : null
             }
-            onAnimationEnd={() => setErrorAnim(false)}
             ref={node => (email = node)}
             type="text"
             id="email"
