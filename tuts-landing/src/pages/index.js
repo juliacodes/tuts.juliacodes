@@ -18,12 +18,30 @@ import {
 
 const App = () => {
   const [theme, setTheme] = useState("dark")
+  const [viewing, setViewing] = useState(true)
+
   useEffect(() => {
+    window.addEventListener("focus", onFocus)
+    window.addEventListener("blur", onBlur)
+
     const mq = window.matchMedia("(prefers-color-scheme: dark)")
     const mode = `${mq.matches ? "dark" : "light"}`
     setTheme(mode)
-    console.log(mode)
+
+    return () => {
+      window.removeEventListener("focus", onFocus)
+      window.removeEventListener("blur", onBlur)
+    }
   }, [])
+
+  const onFocus = () => {
+    setViewing(true)
+    console.log("Tab is in focus")
+  }
+  const onBlur = () => {
+    setViewing(false)
+    console.log("Tab is blurred")
+  }
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -44,7 +62,7 @@ const App = () => {
             <Form />
           </Main>
         </Inner>
-        <MarqueeCont />
+        <MarqueeCont viewing={viewing} />
       </Container>
     </ThemeProvider>
   )
