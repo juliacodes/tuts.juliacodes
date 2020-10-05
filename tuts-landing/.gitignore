@@ -54,9 +54,14 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
+# build path of test fixtures
+test/**/public
+.gatsby-context.js
+.DS_Store
+public/
+node_modules/
 .cache/
-public
+.netlify
 
 # Mac files
 .DS_Store
