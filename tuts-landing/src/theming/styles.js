@@ -7,7 +7,7 @@ const QUERIES = {
   medium: `min-width: 870px`,
   small: `min-width: 660px`,
   maxWidth: `1500px`,
-  height: `min-height: 800px`,
+  height: `min-height: 750px`,
 }
 export const Container = styled.div`
   width: 100vw;
