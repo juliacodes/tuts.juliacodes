@@ -24,6 +24,7 @@ const CustomForm = ({ status, message, onValidated }) => {
       onValidated({
         EMAIL: email.value,
       })
+      console.log("tapped")
     }
   }
   return (
