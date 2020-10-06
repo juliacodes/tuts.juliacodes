@@ -78,13 +78,6 @@ const CustomForm = ({ status, message, onValidated }) => {
           )}
           <input
             style={{ fontSize: "2em", padding: 5 }}
-            ref={node => (name = node)}
-            type="text"
-            placeholder="Your name"
-          />
-          <br />
-          <input
-            style={{ fontSize: "2em", padding: 5 }}
             ref={node => (email = node)}
             type="email"
             placeholder="Your email"

@@ -196,7 +196,7 @@ export const FormCont = styled.div`
     }
   }
 
-  #form {
+  /* #form {
     width: calc(100vw - 70px);
     max-width: 400px;
     padding: 20px 0;
@@ -216,9 +216,9 @@ export const FormCont = styled.div`
       position: relative;
       display: inline-block;
     }
-  }
+  } */
 
-  #email {
+  /* #email {
     background-color: ${({ theme }) => theme.formGray};
     padding: 10px 15px;
     font-weight: normal;
@@ -234,7 +234,7 @@ export const FormCont = styled.div`
     @media (${QUERIES.small}) {
       width: 330px;
     }
-  }
+  } */
 
   #submit {
     width: 30px;
