@@ -138,124 +138,124 @@ export const Shake = keyframes`
 
 `
 
-export const FormCont = styled.div`
-  width: calc(100vw - 70px);
-  max-width: 400px;
-  height: 70px;
-  padding: 20px 0;
-  background-color: ${({ theme }) => theme.main};
-  margin: 4vh auto;
-  border-radius: 20px;
+export const FormCont = styled.div``
+//   width: calc(100vw - 70px);
+//   max-width: 400px;
+//   height: 70px;
+//   padding: 20px 0;
+//   background-color: ${({ theme }) => theme.main};
+//   margin: 4vh auto;
+//   border-radius: 20px;
 
-  @media (${QUERIES.small}) {
-    width: 400px;
-  }
+//   @media (${QUERIES.small}) {
+//     width: 400px;
+//   }
 
-  ::before {
-    content: "";
-    width: calc(100vw - 140px);
-    max-width: 300px;
-    height: 50px;
-    position: absolute;
-    top: 40px;
-    left: 10vw;
-    box-shadow: ${({ theme }) => theme.formShadow};
+//   ::before {
+//     content: "";
+//     width: calc(100vw - 140px);
+//     max-width: 300px;
+//     height: 50px;
+//     position: absolute;
+//     top: 40px;
+//     left: 10vw;
+//     box-shadow: ${({ theme }) => theme.formShadow};
 
-    @media (${QUERIES.small}) {
-      width: 350px;
-      left: 35px;
-    }
-  }
+//     @media (${QUERIES.small}) {
+//       width: 350px;
+//       left: 35px;
+//     }
+//   }
 
-  .form-error {
-    border: 1px solid #e4453a;
-  }
+//   .form-error {
+//     border: 1px solid #e4453a;
+//   }
 
-  .error-anim {
-    animation: ${Shake} linear 0.2s;
-  }
+//   .error-anim {
+//     animation: ${Shake} linear 0.2s;
+//   }
 
-  .error-icon::after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    top: 33px;
-    right: 135px;
-    width: 25px;
-    height: 25px;
-    background-size: cover;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url(${error});
+//   .error-icon::after {
+//     content: "";
+//     position: absolute;
+//     display: inline-block;
+//     top: 33px;
+//     right: 135px;
+//     width: 25px;
+//     height: 25px;
+//     background-size: cover;
+//     background-color: transparent;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-image: url(${error});
 
-    z-index: 99;
+//     z-index: 99;
 
-    @media (${QUERIES.small}) {
-      right: 70px;
-    }
-  }
+//     @media (${QUERIES.small}) {
+//       right: 70px;
+//     }
+//   }
 
-  /* #form {
-    width: calc(100vw - 70px);
-    max-width: 400px;
-    padding: 20px 0;
-    background-color: ${({ theme }) => theme.main};
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
-    border-radius: 20px;
+//   /* #form {
+//     width: calc(100vw - 70px);
+//     max-width: 400px;
+//     padding: 20px 0;
+//     background-color: ${({ theme }) => theme.main};
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     position: relative;
+//     border-radius: 20px;
 
-    @media (${QUERIES.small}) {
-      width: 400px;
-    }
+//     @media (${QUERIES.small}) {
+//       width: 400px;
+//     }
 
-    .sent {
-      animation: ${Sending} ease-in-out 3s;
-      position: relative;
-      display: inline-block;
-    }
-  } */
+//     .sent {
+//       animation: ${Sending} ease-in-out 3s;
+//       position: relative;
+//       display: inline-block;
+//     }
+//   } */
 
-  /* #email {
-    background-color: ${({ theme }) => theme.formGray};
-    padding: 10px 15px;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 165.69%;
-    border-radius: 13px;
-    width: 230px;
-    color: ${({ theme }) => theme.textMain};
+//   /* #email {
+//     background-color: ${({ theme }) => theme.formGray};
+//     padding: 10px 15px;
+//     font-weight: normal;
+//     font-size: 18px;
+//     line-height: 165.69%;
+//     border-radius: 13px;
+//     width: 230px;
+//     color: ${({ theme }) => theme.textMain};
 
-    ::placeholder {
-      color: ${({ theme }) => theme.textGray};
-    }
-    @media (${QUERIES.small}) {
-      width: 330px;
-    }
-  } */
+//     ::placeholder {
+//       color: ${({ theme }) => theme.textGray};
+//     }
+//     @media (${QUERIES.small}) {
+//       width: 330px;
+//     }
+//   } */
 
-  #submit {
-    width: 30px;
-    height: 30px;
-    background-size: fit;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url(${send});
-    transition-duration: 0.4s;
-    display: inline-block;
-    z-index: 99999999;
+//   #submit {
+//     width: 30px;
+//     height: 30px;
+//     background-size: fit;
+//     background-color: transparent;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-image: url(${send});
+//     transition-duration: 0.4s;
+//     display: inline-block;
+//     z-index: 99999999;
 
-    @media (${QUERIES.small}) {
-      :hover {
-        transform-origin: 50% 50%;
-        transform: rotate(45deg);
-      }
-    }
-  }
-`
+//     @media (${QUERIES.small}) {
+//       :hover {
+//         transform-origin: 50% 50%;
+//         transform: rotate(45deg);
+//       }
+//     }
+//   }
+// `
 export const slide = keyframes`
   from {
     transform: translateX(0px);
