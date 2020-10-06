@@ -8,23 +8,23 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   let email
 
-  const submit = () => {
-    setError(false)
-    setTimeout(() => {
-      setErrorAnim(false)
-    }, 1000)
+  const submit = () =>
+    // setError(false)
+    // setTimeout(() => {
+    //   setErrorAnim(false)
+    // }, 1000)
 
-    if (email && !email.value.includes("@") && !email.value.includes(".")) {
-      setError(true)
-      setErrorAnim(true)
-    }
+    // if (email && !email.value.includes("@") && !email.value.includes(".")) {
+    //   setError(true)
+    //   setErrorAnim(true)
+    // }
 
-    if (email && email.value.indexOf("@") > 0) {
-      onValidated({
-        EMAIL: email.value,
-      })
-    }
-  }
+    email &&
+    email.value.indexOf("@") > -1 &&
+    onValidated({
+      EMAIL: email.value,
+    })
+
   return (
     <>
       <FormCont>
