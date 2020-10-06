@@ -1,70 +1,86 @@
-import React, { useState, useEffect } from "react"
-import logo from "../images/logo.png"
-import logoDark from "../images/logo-dark.png"
-import { ThemeProvider } from "styled-components"
-import lightTheme, { darkTheme } from "../theming/themeContext"
-import GlobalStyles from "../theming/global"
-import MarqueeCont from "../components/MarqueeCont"
-import Form from "../components/Form"
+import React, { Component } from "react"
+import { render } from "react-dom"
 
-import {
-  Inner,
-  Container,
-  LogoCont,
-  Main,
-  TextAnimate,
-  InnerText,
-} from "../theming/styles"
+import MailchimpSubscribe from "react-mailchimp-subscribe"
 
-const App = () => {
-  const [theme, setTheme] = useState("dark")
-  const [viewing, setViewing] = useState(true)
-
-  useEffect(() => {
-    window.addEventListener("focus", onFocus)
-    window.addEventListener("blur", onBlur)
-
-    const mq = window.matchMedia("(prefers-color-scheme: dark)")
-    const mode = `${mq.matches ? "dark" : "light"}`
-    setTheme(mode)
-
-    return () => {
-      window.removeEventListener("focus", onFocus)
-      window.removeEventListener("blur", onBlur)
-    }
-  }, [])
-
-  const onFocus = () => {
-    setViewing(true)
-    console.log("Tab is in focus")
-  }
-  const onBlur = () => {
-    setViewing(false)
-    console.log("Tab is blurred")
-  }
+// a basic form
+const CustomForm = ({ status, message, onValidated }) => {
+  let email, name
+  const submit = () =>
+    email &&
+    name &&
+    email.value.indexOf("@") > -1 &&
+    onValidated({
+      EMAIL: email.value,
+      NAME: name.value,
+    })
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <GlobalStyles />
-      <Container>
-        <Inner>
-          <LogoCont>
-            <img src={theme === "light" ? logo : logoDark} />
-            <div class="comingSoon">COMING SOON</div>
-          </LogoCont>
-          <Main>
-            <h1>Tutorials Reimagined</h1>
-            <p>
-              Videos designed with comprehensive steps and side-by-side code
-              view and explanation
-            </p>
-            <p>Subscribe to be the first to see new content.</p>
-            <Form />
-          </Main>
-        </Inner>
-        <MarqueeCont viewing={viewing} />
-      </Container>
-    </ThemeProvider>
+    <div
+      style={{
+        background: "#efefef",
+        borderRadius: 2,
+        padding: 10,
+        display: "inline-block",
+      }}
+    >
+      {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+      {status === "error" && (
+        <div
+          style={{ color: "red" }}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      {status === "success" && (
+        <div
+          style={{ color: "green" }}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      <input
+        style={{ fontSize: "2em", padding: 5 }}
+        ref={node => (name = node)}
+        type="text"
+        placeholder="Your name"
+      />
+      <br />
+      <input
+        style={{ fontSize: "2em", padding: 5 }}
+        ref={node => (email = node)}
+        type="email"
+        placeholder="Your email"
+      />
+      <br />
+      <button style={{ fontSize: "2em", padding: 5 }} onClick={submit}>
+        Submit
+      </button>
+    </div>
   )
 }
+
+class App extends Component {
+  render() {
+    const url =
+      "https://jster.us7.list-manage.com/subscribe/post?u=ed40c0084a0c5ba31b3365d65&id=ec6f32bf5e"
+    return (
+      <div>
+        <h1>react-mailchimp-subscribe Demo</h1>
+        <h2>Default Form</h2>
+        <MailchimpSubscribe url={url} />
+        <h2>Custom Form</h2>
+        <MailchimpSubscribe
+          url={url}
+          render={({ subscribe, status, message }) => (
+            <CustomForm
+              status={status}
+              message={message}
+              onValidated={formData => subscribe(formData)}
+            />
+          )}
+        />
+      </div>
+    )
+  }
+}
+
 export default App
