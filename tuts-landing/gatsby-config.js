@@ -26,10 +26,9 @@ module.exports = {
     },
     `gatsby-plugin-mailchimp`,
     {
-      resolve: `gatsby-plugin-mailchimp`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        endpoint:
-          "https://juliacodes.us2.list-manage.com/subscribe/post?u=d9a155db981af85949846a203&amp;id=25bf6e95f5",
+        endpoint: process.env.REACT_APP_MAILCHIMP_URL,
       },
     },
 
