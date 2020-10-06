@@ -47,11 +47,14 @@ const CustomForm = ({ status, message, onValidated }) => {
             id="email"
             placeholder="Your Email Address"
           />
-          <button
+          {/* <button
             className={status === "success" ? "sent" : null}
             onClick={submit}
             id="submit"
-          ></button>
+          ></button> */}
+          <button style={{ fontSize: "2em", padding: 5 }} onClick={submit}>
+            Submit
+          </button>
         </div>
       </FormCont>
       {status === "sending" && (

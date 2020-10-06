@@ -245,6 +245,8 @@ export const FormCont = styled.div`
     background-position: center center;
     background-image: url(${send});
     transition-duration: 0.4s;
+    display: inline-block;
+    z-index: 99999999;
 
     @media (${QUERIES.small}) {
       :hover {
