@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import MailchimpSubscribe from "react-mailchimp-subscribe"
-import { FormCont } from "../theming/styles"
+import { FormCont, Button } from "../theming/styles"
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(false)
@@ -8,27 +8,28 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   let email
 
-  const submit = () =>
-    // setError(false)
-    // setTimeout(() => {
-    //   setErrorAnim(false)
-    // }, 1000)
+  const submit = () => {
+    setError(false)
+    setTimeout(() => {
+      setErrorAnim(false)
+    }, 1000)
 
-    // if (email && !email.value.includes("@") && !email.value.includes(".")) {
-    //   setError(true)
-    //   setErrorAnim(true)
-    // }
+    if (email && !email.value.includes("@") && !email.value.includes(".")) {
+      setError(true)
+      setErrorAnim(true)
+    }
 
-    email &&
-    email.value.indexOf("@") > -1 &&
-    onValidated({
-      EMAIL: email.value,
-    })
-
+    if (email && email.value.indexOf("@") > 0) {
+      onValidated({
+        EMAIL: email.value,
+      })
+      console.log("tapped")
+    }
+  }
   return (
     <>
       <FormCont>
-        {/* <div
+        <div
           className={
             status === "error" ? "error-icon" : error ? "error-icon" : null
           }
@@ -47,45 +48,11 @@ const CustomForm = ({ status, message, onValidated }) => {
             id="email"
             placeholder="Your Email Address"
           />
-          <button
+          <Button
             className={status === "success" ? "sent" : null}
             onClick={submit}
             id="submit"
-          ></button>
-        </div> */}
-        <div
-          style={{
-            background: "#efefef",
-            borderRadius: 2,
-            padding: 10,
-            display: "inline-block",
-          }}
-        >
-          {status === "sending" && (
-            <div style={{ color: "blue" }}>sending...</div>
-          )}
-          {status === "error" && (
-            <div
-              style={{ color: "red" }}
-              dangerouslySetInnerHTML={{ __html: message }}
-            />
-          )}
-          {status === "success" && (
-            <div
-              style={{ color: "green" }}
-              dangerouslySetInnerHTML={{ __html: message }}
-            />
-          )}
-          <input
-            style={{ fontSize: "2em", padding: 5 }}
-            ref={node => (email = node)}
-            type="email"
-            placeholder="Your email"
-          />
-          <br />
-          <button style={{ fontSize: "2em", padding: 5 }} onClick={submit}>
-            Submit
-          </button>
+          ></Button>
         </div>
       </FormCont>
       {status === "sending" && (
