@@ -245,9 +245,12 @@ export const FormCont = styled.div`
     background-position: center center;
     background-image: url(${send});
     transition-duration: 0.4s;
-    :hover {
-      transform-origin: 50% 50%;
-      transform: rotate(45deg);
+
+    @media (${QUERIES.small}) {
+      :hover {
+        transform-origin: 50% 50%;
+        transform: rotate(45deg);
+      }
     }
   }
 `
