@@ -17,14 +17,12 @@ const CustomForm = ({ status, message, onValidated }) => {
     if (email && !email.value.includes("@") && !email.value.includes(".")) {
       setError(true)
       setErrorAnim(true)
-      console.log(error + " " + errorAnim)
     }
 
     if (email && email.value.indexOf("@") > 0) {
       onValidated({
         EMAIL: email.value,
       })
-      console.log("tapped")
     }
   }
   return (
