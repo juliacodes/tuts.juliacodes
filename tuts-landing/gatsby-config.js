@@ -24,11 +24,11 @@ module.exports = {
         theme_color: `#663399`,
       },
     },
-    `gatsby-plugin-mailchimp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-plugin-mailchimp`,
       options: {
-        endpoint: process.env.REACT_APP_MAILCHIMP_URL,
+        endpoint:
+          "https://juliacodes.us2.list-manage.com/subscribe/post?u=d9a155db981af85949846a203&amp;id=25bf6e95f5",
       },
     },
 

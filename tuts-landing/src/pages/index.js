@@ -7,14 +7,7 @@ import GlobalStyles from "../theming/global"
 import MarqueeCont from "../components/MarqueeCont"
 import Form from "../components/Form"
 
-import {
-  Inner,
-  Container,
-  LogoCont,
-  Main,
-  TextAnimate,
-  InnerText,
-} from "../theming/styles"
+import { Inner, Container, LogoCont, Main } from "../theming/styles"
 
 const App = () => {
   const [theme, setTheme] = useState("dark")
@@ -36,11 +29,9 @@ const App = () => {
 
   const onFocus = () => {
     setViewing(true)
-    console.log("Tab is in focus")
   }
   const onBlur = () => {
     setViewing(false)
-    console.log("Tab is blurred")
   }
 
   return (
