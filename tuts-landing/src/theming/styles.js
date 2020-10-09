@@ -7,21 +7,21 @@ const QUERIES = {
   medium: `min-width: 870px`,
   small: `min-width: 660px`,
   maxWidth: `1500px`,
-  height: `min-height: 730px`,
+  height: `min-height: 700px`,
 }
 
 export const Container = styled.div`
   width: 100vw;
-  max-height: calc(100vh);
+  max-height: 100%;
   padding: 0;
   overflow: hidden;
 
   @media (${QUERIES.small}) {
-    height: 100vh;
+    height: 100%;
   }
 `
 export const Inner = styled.div`
-  max-height: calc(100vh - 30px);
+  max-height: calc(100vh - 50px);
   height: 100vh;
   padding: 0;
   margin: 50px auto 0 auto;
