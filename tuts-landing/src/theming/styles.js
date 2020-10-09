@@ -7,7 +7,7 @@ const QUERIES = {
   medium: `min-width: 870px`,
   small: `min-width: 660px`,
   maxWidth: `1500px`,
-  height: `min-height: 750px`,
+  height: `min-height: 730px`,
 }
 
 export const Container = styled.div`
@@ -294,7 +294,7 @@ export const TextAnimate = styled.div`
   position: absolute;
   width: 100vw;
   height: auto;
-  bottom: 30px;
+  bottom: 0px;
   left: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -302,7 +302,6 @@ export const TextAnimate = styled.div`
 
   @media (${QUERIES.small}) {
     display: none;
-    bottom: calc(-1px * 30vh);
   }
   @media (${QUERIES.height}) and (${QUERIES.small}) {
     display: block;
