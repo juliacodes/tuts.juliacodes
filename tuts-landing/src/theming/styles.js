@@ -21,10 +21,14 @@ export const Container = styled.div`
   }
 `
 export const Inner = styled.div`
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - 100px);
   height: 100vh;
   padding: 0;
   margin: 50px auto 0 auto;
+
+  @media (${QUERIES.small}) {
+    max-height: calc(100vh - 50px);
+  }
 `
 
 export const LogoCont = styled.div`
