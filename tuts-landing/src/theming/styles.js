@@ -17,7 +17,6 @@ export const Container = styled.div`
   overflow: hidden;
 
   @media (${QUERIES.small}) {
-    max-height: calc(100vh - 30px);
     height: 100vh;
   }
 `
@@ -294,7 +293,7 @@ export const slideRev = keyframes`
 export const TextAnimate = styled.div`
   position: absolute;
   width: 100vw;
-  height: 160px;
+  height: auto;
   bottom: 30px;
   left: 0;
   overflow: hidden;
@@ -303,11 +302,11 @@ export const TextAnimate = styled.div`
 
   @media (${QUERIES.small}) {
     display: none;
-    bottom: 0px;
+    bottom: calc(-1px * 30vh);
   }
   @media (${QUERIES.height}) and (${QUERIES.small}) {
     display: block;
-    bottom: 0px;
+    bottom: 0;
   }
 
   @media (${QUERIES.height}) {

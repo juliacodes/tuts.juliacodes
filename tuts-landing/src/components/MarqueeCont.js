@@ -1,14 +1,17 @@
 import React from "react"
 import Marquee from "react-marquee-slider"
-import times from "lodash/times"
 import { TextAnimate, SlidingText } from "../theming/styles"
 import skills from "../storage/skills"
+import { isMobile } from "react-device-detect"
 
 const MarqueeCont = props => {
   return (
     <TextAnimate>
-      <div style={{ marginTop: 30 }}>
-        <Marquee style={{ height: 120 }} velocity={props.viewing ? 35 : 0}>
+      <div style={{ marginTop: "1.4%" }}>
+        <Marquee
+          style={{ height: 120 }}
+          velocity={props.viewing && !isMobile ? 35 : isMobile ? 5 : 0}
+        >
           {skills.slice(20, 40).map(skill => (
             <SlidingText>
               <p
@@ -21,11 +24,11 @@ const MarqueeCont = props => {
           ))}
         </Marquee>
       </div>
-      <div style={{ marginTop: 30 }}>
+      <div style={{ marginTop: "1.4%" }}>
         <Marquee
           direction="rlt"
           style={{ height: 120 }}
-          velocity={props.viewing ? 35 : 0}
+          velocity={props.viewing && !isMobile ? 35 : isMobile ? 5 : 0}
         >
           {skills
             .slice(10, 30)
@@ -42,8 +45,11 @@ const MarqueeCont = props => {
             ))}
         </Marquee>
       </div>
-      <div style={{ marginTop: 30 }}>
-        <Marquee style={{ height: 120 }} velocity={props.viewing ? 35 : 0}>
+      <div style={{ marginTop: "1.4%" }}>
+        <Marquee
+          style={{ height: 120 }}
+          velocity={props.viewing && !isMobile ? 35 : isMobile ? 5 : 0}
+        >
           {skills.slice(0, 20).map(skill => (
             <SlidingText>
               <p
